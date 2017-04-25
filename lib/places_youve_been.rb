@@ -1,9 +1,10 @@
-# example ruby code
+class Places
+  define_method(:initialize) do |location|
+    @location = location
+  end
 
-# class Palindrome
+  define_method(:description) do
+    @location
+  end
 
-#   def is_word?(user_input)
-#     user_input.match?(/[aeiouy]+/i)
-#   end
-
-# end
+end
