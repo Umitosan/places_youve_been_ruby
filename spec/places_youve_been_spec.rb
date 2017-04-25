@@ -2,7 +2,7 @@ require "places_youve_been"
 require "rspec"
 require "pry"
 
-describe 'Places#description' do
+describe 'Places' do
 
   before() do
     Places.clearall
@@ -19,18 +19,29 @@ describe 'Places#description' do
     it "save the place instance to an array" do
       place1 = Places.new("Paris")
       place1.store
-      expect(Places.all).to(eq(['Paris']))
+      expect(Places.all[0].description).to(eq('Paris'))
     end
   end
 
-  describe '#store' do
+  describe '.all' do
     it "save the place instance to an array" do
       place1 = Places.new("Paris")
       place2 = Places.new("Amsterdam")
       place1.store
       place2.store
-      expect(Places.all).to(eq(['Paris', 'Amsterdam']))
+      expect( Places.print_all() ).to(eq('Paris Amsterdam'))
     end
   end
 
+end
+
+# describe 'Places' do
+#
+#
+#
+# end
+
+
+Places.all.each do |place|
+   a.push(place.description)
 end

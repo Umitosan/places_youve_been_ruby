@@ -1,4 +1,11 @@
+<h1>All the places</h1>
 <hr>
-<h2><%= @place_desc %></h2>
+<a href="/clear-list" class="btn btn-info">Clear List</a>
+<h5>Length of Places list: <%= @places_len %></h5>
 <hr>
-<!-- <a href="/" class="btn btn-danger">reset</a> -->
+<ul>
+  <% Places.all.each do |place| %>
+  <li><%= place.description %></li>
+  <% end %>
+</ul>
+<br>
